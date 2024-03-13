@@ -45,7 +45,19 @@ public class MyLinkedList<Ttype> {
 	}
 	
 	
-	
+	public void print() throws Exception
+	{
+		if(isEmpty()) throw new Exception("List is empty");
+		
+		
+		MyListNode temp = first;
+		
+		for(int i = 0 ; i < counter; i++) {
+			System.out.print(temp + " ");
+			temp = temp.getNext();
+		}
+		System.out.println();
+	}
 	
 	
 	
