@@ -130,6 +130,37 @@ public class MyLinkedList<Ttype> {
 		System.out.println();
 	}
 	
+	//delete
+	//TODO
+	//funkcijas deklarācija
+	public void remove(int position) throws Exception
+	{		//pārbaude uz isEmpty
+		if(isEmpty()) throw new Exception("list is empty and it is not possible to delete element");
+
+		//pārbaude uz position
+		if(position < 0 || position >= counter) throw new Exception("Problems with position");
+		//1. ja dzēšam pirmo elementu
+		if(position == 0){
+			MyListNode theNewFirst = first.getNext();
+			theNewFirst.setPrevious(null);
+			first = theNewFirst;
+			counter--;
+			System.gc();
+			
+		}
+		
+		//2. ja dzēšam pēdejo elementu
+		else if(position == counter-1) {
+			MyListNode theNewLast = last.getPrevious();
+			theNewLast.setNext(null);
+			last = theNewLast;
+			counter--;
+			System.gc();
+		}
+		
+		//3. ja dzēšam kādu pa vidu
+	}
+
 	
 	
 	
