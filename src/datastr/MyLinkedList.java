@@ -180,6 +180,25 @@ public class MyLinkedList<Ttype> {
 		
 	}
 
+	//get (pēc pozīcijas)
+	public Ttype get(int position) throws Exception {
+		if(isEmpty()) throw new Exception("list is empty and it is not possible to get element");
+		
+		if(position < 0 || position >= counter) throw new Exception("Problems with position");
+	
+
+		MyListNode temp = first;
+		for(int i = 0; i < position; i++) {
+			temp = temp.getNext();
+		}
+		
+		return (Ttype) temp.getElement();
+
+	}
+	
+	
+	//search (pēc elementa)
+	//makeEmpty
 	
 	
 	
