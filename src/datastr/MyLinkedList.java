@@ -157,8 +157,27 @@ public class MyLinkedList<Ttype> {
 			counter--;
 			System.gc();
 		}
-		
 		//3. ja dzēšam kādu pa vidu
+		else
+		{
+			MyListNode temp = first;
+			
+			for(int i = 0; i < position; i++) {
+				temp = temp.getNext();
+			}
+			
+			
+			MyListNode rightNode = temp.getNext();
+			MyListNode leftNode = temp.getPrevious();
+			
+			leftNode.setNext(rightNode);
+			rightNode.setPrevious(leftNode);
+			
+			counter--;
+			System.gc();
+			
+		}
+		
 	}
 
 	
