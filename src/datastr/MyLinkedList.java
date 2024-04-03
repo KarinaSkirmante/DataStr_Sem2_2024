@@ -198,7 +198,33 @@ public class MyLinkedList<Ttype> {
 	
 	
 	//search (pēc elementa)
+	
+	public boolean search(Ttype element) throws Exception{
+		if(isEmpty()) throw new Exception("list is empty and it is not possible to search element");
+		
+		if(element == null) throw new Exception("Problems with element");
+		
+		MyListNode temp = first;
+		
+		//while(temp != null)
+		for(int i = 0; i < counter; i++) {
+			if(temp.getElement().equals(element)) {
+				return true;
+			}
+			temp = temp.getNext();
+		}
+		return false;
+		
+	}
 	//makeEmpty
+	public void makeEmpty()
+	{
+		last = null;
+		first = null;
+		counter = 0;
+		System.gc();
+	}
+	
 	
 	
 	
